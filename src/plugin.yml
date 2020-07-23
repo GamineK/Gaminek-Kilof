@@ -1,5 +1,5 @@
 name: GaminekKilof
-version: 1
-main: kodicrew.gaminek.kilof.Main
-description: Blokada kilofa na 1hp jak na CraftCore! lol
+version: 2.0
+main: pl.gaminek.pickaxe.Main
+description: Blokada kilofa na 1hp jak na CraftCore!
 author: GamineK_
