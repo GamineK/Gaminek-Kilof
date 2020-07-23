@@ -13,15 +13,15 @@ import org.bukkit.potion.PotionEffectType;
 
 public class PlayerInteractListener implements Listener {
     @EventHandler(priority = EventPriority.HIGH)
-    public void onMine(PlayerInteractEvent e) {
-        Player p = e.getPlayer();
-        ItemStack s = e.getPlayer().getItemInHand();
-        if (s.getType().equals(Material.DIAMOND_PICKAXE) && s.getDurability() == 1559) {
-            p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_DIGGING, 100, 100));
-            ChatUtil.sendMessage(p, "&CTwoj kilof ma jedno uzycie, napraw go :)");
-            ChatUtil.sendTitle(p, "&cKILOF", "&eTwoj kilof ma jedno uzycie! Idz go napraw!", 5, 60, 5);
-            e.setCancelled(true);
-            s.setDurability((short)1559);
+    public void onPlayerInteract(PlayerInteractEvent event) {
+        Player player = event.getPlayer();
+        ItemStack itemStack = event.getPlayer().getItemInHand();
+        if (itemStack.getType().equals(Material.DIAMOND_PICKAXE) && itemStack.getDurability() == 1559) {
+            player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_DIGGING, 100, 100));
+            ChatUtil.sendMessage(player, "&CTwoj kilof ma jedno uzycie, napraw go :)");
+            ChatUtil.sendTitle(player, "&cKILOF", "&eTwoj kilof ma jedno uzycie! Idz go napraw!", 5, 60, 5);
+            event.setCancelled(true);
+            itemStack.setDurability((short)1559);
         }
     }
 }
