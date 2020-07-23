@@ -9,9 +9,6 @@ public class Main extends JavaPlugin {
         registerEvents();
     }
 
-    @Override
-    public void onDisable() {}
-
     private void registerEvents() {
         getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
     }
