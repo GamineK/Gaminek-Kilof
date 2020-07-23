@@ -16,7 +16,7 @@ public class BlockBreakListener implements Listener {
     public void onBlockBreak(BlockBreakEvent event) {
         Player player = event.getPlayer();
         ItemStack itemStack = event.getPlayer().getItemInHand();
-        if (itemStack.getType().equals(Material.DIAMOND_PICKAXE) && itemStack.getDurability() == 1559) {
+        if (itemStack.getType().equals(Material.DIAMOND_PICKAXE) && itemStack.getDurability() >= 1559) {
             player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_DIGGING, 100, 100));
             ChatUtil.sendMessage(player, "&CTwoj kilof ma jedno uzycie, napraw go :)");
             ChatUtil.sendTitle(player, "&cKILOF", "&eTwoj kilof ma jedno uzycie! Idz go napraw!", 5, 60, 5);
